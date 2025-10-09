@@ -7,7 +7,7 @@
   --button-secondary-hover: #f2f2f2;
 
   display: grid;
-  grid-template-rows: 20px 1fr 20px;
+  grid-template-rows: 20px  20px;
   align-items: center;
   justify-items: center;
   min-height: 100svh;
@@ -164,39 +164,4 @@ a.secondary {
   .logo {
     filter: invert();
   }
-}
-
-.gridContainer {
-  display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px 100px 100px;
-  gap: 5px;
-  height: 300px;
-  width: 300px;
-}
-
-.gridItem {
-  font-size: 45px;
-  font-weight: bold;
-  background-color: lightgrey;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid darkgrey;
-  cursor: pointer;
-}
-
-.header {
-  font-size: 50px;
-  font-weight: bold;
-  text-decoration: underline dotted darkblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: lightblue;
-  height: 100;
-  width: 1100;
-  margin: 10px;
-  padding: 3px;
-  border-radius: 20px;
 }

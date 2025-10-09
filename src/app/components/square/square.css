@@ -1,0 +1,37 @@
+.gridContainer {
+    font-size: 18px;
+    text-shadow: 5px 5px 5px grey;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    gap: 5px;
+    height: 300px;
+    width: 300px;
+}
+
+.gridItem {
+    font-size: 85px;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px darkgrey;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2.5px solid darkgrey;
+    cursor: pointer;
+}
+
+.aktuell {
+    font-size: 22.5px;
+    text-shadow: 5px 5px 5px #63aad6;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    height: 50px;
+    width: 500px;
+    border: 2.5px solid darkblue;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px darkgrey;
+}
