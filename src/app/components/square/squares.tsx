@@ -35,7 +35,7 @@ export const Squares = () => {
                 aktuelleZellen[a] &&
                 aktuelleZellen[a] === aktuelleZellen[b] &&
                 aktuelleZellen[a] === aktuelleZellen[c]
-            ) {
+            ){
                 return aktuelleZellen[a]
             } 
         }
