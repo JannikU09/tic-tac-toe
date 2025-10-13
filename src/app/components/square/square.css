@@ -5,8 +5,9 @@
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     gap: 5px;
-    height: 300px;
-    width: 300px;
+    height: 310px;
+    width: 310px;
+    margin: 5px auto;
 }
 
 .gridItem {
@@ -14,24 +15,26 @@
     font-weight: bold;
     text-shadow: 5px 5px 5px darkgrey;
     background-color: lightgrey;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
-    border: 2.5px solid darkgrey;
+    border: 2.5px solid #575656;
     cursor: pointer;
 }
 
 .aktuell {
-    font-size: 22.5px;
-    text-shadow: 5px 5px 5px #63aad6;
+    font-size: 25px;
     font-weight: bold;
+    font-family: "Times New Roman";
+    text-shadow: 5px 5px 5px #63aad6;
     display: flex;
     justify-content: center;
     align-items: center;
     background: lightblue;
-    height: 50px;
+    height: 40px;
     width: 500px;
     border: 2.5px solid darkblue;
     border-radius: 20px;
-    box-shadow: 5px 5px 5px darkgrey;
+    box-shadow: 5px 5px 5px #575656;
+    margin: 20px auto;
 }
