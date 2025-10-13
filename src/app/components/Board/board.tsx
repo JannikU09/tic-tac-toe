@@ -2,12 +2,12 @@
 
 import './board.css'
 import React from 'react'
-import { Squares } from '../square/square'
+import { Squares } from '../square/squares'
 
 export const Board = () => {
     return (
         <>
-            <div className='gridContainer'>
+            <div className='board'>
                 <Squares/>
             </div>
         </>
