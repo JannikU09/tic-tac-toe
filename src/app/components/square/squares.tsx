@@ -58,7 +58,7 @@ export const Squares = () => {
                 const evtlUnentschieden = unentschieden(newZellen);
                 
                 if(evtlGewinner) {
-                    setGewinner(evtlGewinner);
+                    setGewinner("Gewinner: " + evtlGewinner);
                 } else if(evtlUnentschieden) {
                     setGewinner("Unentschieden");
                 } else {
