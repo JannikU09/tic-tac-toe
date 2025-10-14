@@ -1,7 +1,6 @@
 "use client"
 
 import '@/app/components/title/title.css'
-import '@/app/components/square/square.css'
 import React from 'react';
 
 export const Title = () => {
