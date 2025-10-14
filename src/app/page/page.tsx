@@ -11,7 +11,6 @@ export const Page = () => {
   return (
     <>
       <Title/>
-    
       <Board/>
     </>
   )
