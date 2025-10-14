@@ -28,6 +28,8 @@ export const Squares = () => {
         [2,4,6],
     ]
 
+    const unentschiedenKombi = [0,1,2,3,4,5,6,7,8,9]
+
     const pruefeGewinner = (aktuelleZellen: string[]) => {
         for(var kombination of gewinnKombinationen) {
             const [a, b, c] = kombination;
@@ -42,6 +44,10 @@ export const Squares = () => {
         return null;
     }
 
+    const unentschieden = (aktuelleZellen: string[]) => {
+        return aktuelleZellen.every(zelle => zelle === "X" || zelle === "O")
+    }
+
 
     const handleClick = (index: number) => {
         if(zellen[index] == "" && !gewinner) {
@@ -50,8 +56,13 @@ export const Squares = () => {
                 newZellen[index] = spieler;
 
                 const evtlGewinner = pruefeGewinner(newZellen);
+
+                const evtlUnentschieden = unentschieden(newZellen);
+                
                 if(evtlGewinner) {
                     setGewinner(evtlGewinner);
+                } else if(evtlUnentschieden) {
+                    setGewinner("Unentschieden");
                 } else {
                     wechseln();
                 }
@@ -72,7 +83,7 @@ export const Squares = () => {
     return (
     <div>
         <div className="aktuell">
-            {gewinner ? `Gewinner: ${gewinner}` : `Aktueller Spieler: ${spieler}`}
+            {gewinner ? gewinner : `Aktueller Spieler: ${spieler}`}
         </div>
 
         <div className="gridContainer">
