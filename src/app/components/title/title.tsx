@@ -1,15 +1,13 @@
 "use client"
 
 import '@/app/components/title/title.css'
+import '@/app/components/square/square.css'
 import React from 'react';
 
 export const Title = () => {
     return(
-        <>
-            <div className='title'>
-                Tic Tac Toe
-            </div>
-
-        </>
+        <div className="title">
+            Tic| Tac |Toe
+        </div>
     );
 }
