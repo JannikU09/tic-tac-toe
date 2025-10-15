@@ -4,3 +4,15 @@
     justify-content: center;
     align-items: center;
 }
+
+.gridContainer {
+    font-size: 18px;
+    text-shadow: 5px 5px 5px grey;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    gap: 5px;
+    height: 100px;
+    width: 310px;
+    margin: 5px auto;
+}
