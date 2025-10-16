@@ -3,10 +3,12 @@
 import '@/app/components/title/title.css'
 import React from 'react';
 
-export const Title = () => {
+export const Title = ({ title, size } : { title: string, size: string}) => {
+    const cssClass = size === 'bigTitle' ? 'bigTitle' : 'smallTitle';
+
     return(
-        <div className="title">
-            Tic| Tac |Toe
+        <div className={`title ${cssClass}`}>
+            { title }
         </div>
     );
 }
