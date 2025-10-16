@@ -14,41 +14,41 @@ export const Board = () => {
 
     const wechseln = () => {
         setSpieler(spieler === "X" ? "O" : "X");
-        };
+    };
 
     const gewinnKombinationen = [
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [2,4,6],
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
     ]
 
     const pruefeGewinner = (aktuelleZellen: string[]) => {
-        for(var kombination of gewinnKombinationen) {
+        for (var kombination of gewinnKombinationen) {
             const [a, b, c] = kombination;
-            if(
+            if (
                 aktuelleZellen[a] &&
                 aktuelleZellen[a] === aktuelleZellen[b] &&
                 aktuelleZellen[a] === aktuelleZellen[c]
-            ){
+            ) {
                 return aktuelleZellen[a]
-            } 
+            }
         }
         return null;
     }
 
     const handleClick = (index: number) => {
-        if(zellen[index] == null && !gewinner) {
+        if (zellen[index] == null && !gewinner) {
             setZellen(prevZellen => {
                 const newZellen = [...prevZellen];
                 newZellen[index] = spieler;
 
                 const evtlGewinner = pruefeGewinner(newZellen);
-                if(evtlGewinner) {
+                if (evtlGewinner) {
                     setGewinner(evtlGewinner);
                 } else {
                     wechseln();
@@ -60,7 +60,7 @@ export const Board = () => {
     }
 
     function zelleDarstellen(index: number) {
-        return(
+        return (
             <Square
                 key={index}
                 value={zellen[index]}
@@ -68,21 +68,15 @@ export const Board = () => {
             />
         );
     }
-    
-    return(
+
+    return (
         <div>
-            <Title size='smallTitle' title={gewinner ? `Gewinner: ${gewinner}` : `Aktueller Spieler: ${spieler}`}/>
+            <Title size='smallTitle' title={gewinner ? `Gewinner: ${gewinner}` : `Aktueller Spieler: ${spieler}`} />
 
             <div className='gridContainer'>
-                {zelleDarstellen(0)}
-                {zelleDarstellen(1)}
-                {zelleDarstellen(2)}
-                {zelleDarstellen(3)}
-                {zelleDarstellen(4)}
-                {zelleDarstellen(5)}
-                {zelleDarstellen(6)}
-                {zelleDarstellen(7)}
-                {zelleDarstellen(8)}
+
+                {zellen.map((_, index) => zelleDarstellen(index))}
+
             </div>
             <Title size='smallTitle' title='Spielstand: '/>
         </div>
