@@ -3,7 +3,6 @@
 import './board.css';
 import React from 'react';
 import Square from '../square/square';
-import '@/app/components/square/square.css';
 import { useState } from "react";
 import '@/app/components/title/title.css'
 import { Title } from '../title/title';
