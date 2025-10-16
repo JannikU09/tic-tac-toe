@@ -78,18 +78,13 @@ export const Board = () => {
                 {zelleDarstellen(0)}
                 {zelleDarstellen(1)}
                 {zelleDarstellen(2)}
-            </div>
-            <div className='gridContainer'>
                 {zelleDarstellen(3)}
                 {zelleDarstellen(4)}
                 {zelleDarstellen(5)}
-            </div>
-            <div className='gridContainer'>
                 {zelleDarstellen(6)}
                 {zelleDarstellen(7)}
                 {zelleDarstellen(8)}
             </div>
-
             <Title size='smallTitle' title='Spielstand: '/>
         </div>
     )
