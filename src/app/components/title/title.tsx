@@ -1,5 +1,3 @@
-"use client"
-
 import '@/app/components/title/title.css'
 import React from 'react';
 
