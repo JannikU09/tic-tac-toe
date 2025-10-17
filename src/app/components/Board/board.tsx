@@ -1,10 +1,7 @@
-"use client"
-
 import './board.css';
 import React from 'react';
 import Square from '../square/square';
 import { useState } from "react";
-import '@/app/components/title/title.css'
 import { Title } from '../title/title';
 
 export const Board = () => {
@@ -41,6 +38,10 @@ export const Board = () => {
         return null;
     }
 
+    const pruefeUnentschieden = (aktuelleZellen: string[]) => {
+        return aktuelleZellen.every(zellen => zellen === "X" || zellen === "O");
+    }
+
     const handleClick = (index: number) => {
         if (zellen[index] == null && !gewinner) {
             setZellen(prevZellen => {
@@ -48,8 +49,13 @@ export const Board = () => {
                 newZellen[index] = spieler;
 
                 const evtlGewinner = pruefeGewinner(newZellen);
+
+                const evtlUnentschieden = pruefeUnentschieden(newZellen)
+
                 if (evtlGewinner) {
-                    setGewinner(evtlGewinner);
+                    setGewinner("Gewinner: " + evtlGewinner);
+                } else if(evtlUnentschieden){
+                    setGewinner("Unentschieden");
                 } else {
                     wechseln();
                 }
@@ -71,7 +77,7 @@ export const Board = () => {
 
     return (
         <div>
-            <Title size='smallTitle' title={gewinner ? `Gewinner: ${gewinner}` : `Aktueller Spieler: ${spieler}`} />
+            <Title size='smallTitle' title={gewinner ? gewinner : `Aktueller Spieler: ${spieler}`} />
 
             <div className='gridContainer'>
 
