@@ -1,5 +1,3 @@
-"use client"
-
 import React from "react"
 import '@/app/page/page.css'
 import { Title } from "../components/title/title"
