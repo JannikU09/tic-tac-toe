@@ -92,7 +92,8 @@ export const Board = () => {
         setZellen(Array(9).fill(null));
         setGewinner(null);
         setPunkteO(0);
-        setPunkteX(0);  
+        setPunkteX(0);
+        wechseln();
     }
 
     return (
@@ -115,13 +116,13 @@ export const Board = () => {
 
             <Title
                 size='smallTitle'
-                title='Nächstes Spiel'
+                title='Nächste Runde'
                 onClick={neueRunde}
             />
 
             <Title
                 size='smallTitle'
-                title='Zurücksetzen'
+                title='Gesamten Spielstand zurücksetzen'
                 onClick={zurücksetzen}
             />
         </div>
