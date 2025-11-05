@@ -8,6 +8,8 @@ export const Board = () => {
     const [zellen, setZellen] = useState(Array(9).fill(null));
     const [spieler, setSpieler] = useState("X");
     const [gewinner, setGewinner] = useState<string | null>(null);
+    var [punkteX, setPunkteX] = useState(0);
+    var [punkteO, setPunkteO] = useState(0);
 
     const wechseln = () => {
         setSpieler(spieler === "X" ? "O" : "X");
@@ -50,11 +52,16 @@ export const Board = () => {
 
                 const evtlGewinner = pruefeGewinner(newZellen);
 
-                const evtlUnentschieden = pruefeUnentschieden(newZellen)
+                const evtlUnentschieden = pruefeUnentschieden(newZellen);
 
                 if (evtlGewinner) {
                     setGewinner("Gewinner: " + evtlGewinner);
-                } else if(evtlUnentschieden){
+                    if (evtlGewinner == "X") {
+                        setPunkteX(punkteX + 1);
+                    } else if (evtlGewinner == "O") {
+                        setPunkteO(punkteO + 1);
+                    }
+                } else if (evtlUnentschieden) {
                     setGewinner("Unentschieden");
                 } else {
                     wechseln();
@@ -75,16 +82,48 @@ export const Board = () => {
         );
     }
 
+    function neueRunde() {
+        setZellen(Array(9).fill(null));
+        setGewinner(null);
+        wechseln();
+    }
+
+    function zurücksetzen() {
+        setZellen(Array(9).fill(null));
+        setGewinner(null);
+        setPunkteO(0);
+        setPunkteX(0);  
+    }
+
     return (
         <div>
-            <Title size='smallTitle' title={gewinner ? gewinner : `Aktueller Spieler: ${spieler}`} />
+            <Title
+                size='smallTitle'
+                title={gewinner ? gewinner : `Aktueller Spieler: ${spieler}`}
+            />
 
             <div className='gridContainer'>
 
                 {zellen.map((_, index) => zelleDarstellen(index))}
 
             </div>
-            <Title size='smallTitle' title='Spielstand: '/>
+
+            <Title
+                size='smallTitle'
+                title={`Spielstand: ${punkteX} zu ${punkteO}`}
+            />
+
+            <Title
+                size='smallTitle'
+                title='Nächstes Spiel'
+                onClick={neueRunde}
+            />
+
+            <Title
+                size='smallTitle'
+                title='Zurücksetzen'
+                onClick={zurücksetzen}
+            />
         </div>
     )
 }
