@@ -1,15 +1,5 @@
-"use client"
-
-import { Page } from "./page/page";
-import '@/app/page/page.css';
+import "./globals.css";
 
 export default function Home() {
-  return (
-
-    <div className="page">
-       
-      <Page/>
-
-    </div>
-  );
+  return <div>Home</div>;
 }

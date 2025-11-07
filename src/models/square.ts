@@ -1,4 +1,4 @@
 export interface Square {
-    value: string;
-    index: number;
+  value: string;
+  index: number;
 }
