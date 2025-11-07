@@ -1,10 +1,11 @@
 "use client";
+
 import React, { useState } from "react";
 
 import "./board.css";
 
-import Square from "../square/square";
-import { Title } from "../title/title";
+import { Square } from "@/components/square/square";
+import { Title } from "@/components/title/title";
 
 export const Board = () => {
   const [zellen, setZellen] = useState(Array(9).fill(null));
